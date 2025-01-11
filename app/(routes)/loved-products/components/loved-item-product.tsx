@@ -5,7 +5,6 @@ import { formatPrice } from "@/lib/fotmatPrice";
 import { ProductType } from "@/types/product";
 import { X } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { format } from "path";
 
 interface LovedItemProductProps {
     product: ProductType

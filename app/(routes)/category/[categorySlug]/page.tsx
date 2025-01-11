@@ -1,7 +1,7 @@
 "use client";
 
 import { useCategoryProduct } from "@/api/getCategoryProduct";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import { ResponseType } from "@/types/response";
 import { Separator } from "@/components/ui/separator";
 import FiltersControlsCategory from "../components/filters-controls-category";
@@ -17,7 +17,6 @@ export default function Page() {
 
     const { result, loading }: ResponseType = useCategoryProduct(categorySlug);
 
-    const router = useRouter();
 
     const [filterGender, setFilterGender] = useState('');
 

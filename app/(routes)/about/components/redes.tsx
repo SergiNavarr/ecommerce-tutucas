@@ -1,6 +1,4 @@
-
 import { Facebook, Instagram, Twitter } from "lucide-react";
-import { useRouter } from "next/navigation";
 
 const Redes = () => {
 
