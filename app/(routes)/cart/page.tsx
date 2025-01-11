@@ -5,7 +5,7 @@ import { useCart } from "@/hooks/use-cart"
 import { formatPrice } from "@/lib/fotmatPrice";
 import CartItem from "./components/cart-item";
 import { useEffect, useState } from "react";
-import { useMercadoPago } from "@/hooks/useMercadoPago";
+import { useMercadoPagoHook } from "@/hooks/useMercadoPagoHook";
 import { PreferenceMP } from "@/types/preference-mp";
 
 
@@ -30,14 +30,13 @@ export default function Page() {
         ))
     }, [items]);
 
-
     const handleClick = async () => {
 
         if (items.length === 0) {
             alert("No hay productos en el carrito");
             return;
         }
-        useMercadoPago(preference);
+        useMercadoPagoHook(preference);
     }
 
 

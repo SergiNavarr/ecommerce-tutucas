@@ -3,12 +3,13 @@ import { redirect } from "next/navigation";
 
 
 import {MercadoPagoConfig, Preference, Payment} from 'mercadopago';
+import { PreferenceMP } from "@/types/preference-mp";
 
 const client = new MercadoPagoConfig({
     accessToken: process.env.ACCES_TOKEN_MERCADOPAGO!
 });
 
-export async function useMercadoPago (props : any)  {
+export async function useMercadoPagoHook (props : PreferenceMP[])  {
 
     const preference = await new Preference(client).create({
         body:{
@@ -16,5 +17,5 @@ export async function useMercadoPago (props : any)  {
         }
     });
 
-    redirect(preference.init_point!)
+    redirect(preference.init_point!);
 }
