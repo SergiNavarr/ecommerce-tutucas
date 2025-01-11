@@ -15,7 +15,8 @@ export default function Page() {
     const prices = items.map(item => item.price);
     const totalPrice = prices.reduce((total, price) => total + price, 0);
 
-    const [preference, setPreference] = useState<Object>([]);
+    // @ts-ignore
+    const [preference, setPreference] = useState<any>([]);
 
     useEffect(() => {
         setPreference( items.map(item => (
