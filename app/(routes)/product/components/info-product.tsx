@@ -6,7 +6,6 @@ import { formatPrice } from "@/lib/fotmatPrice";
 import { cn } from "@/lib/utils";
 import { ProductType } from "@/types/product";
 import { Heart } from "lucide-react";
-import { useEffect, useState } from "react";
 
 export type InfoProductProps = {
     product: ProductType
