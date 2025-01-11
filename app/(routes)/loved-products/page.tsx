@@ -4,7 +4,7 @@ import LovedItemProduct from "./components/loved-item-product";
 
 export default function Page() {
 
-    const {lovedItems, removeLoveItem} = useLovedProducts();
+    const {lovedItems} = useLovedProducts();
 
     return (
         <div className="max-w-4xl py-4 mx-auto sm:py-32 sm:px-24">
