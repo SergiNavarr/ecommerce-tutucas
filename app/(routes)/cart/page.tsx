@@ -5,7 +5,7 @@ import { useCart } from "@/hooks/use-cart"
 import { formatPrice } from "@/lib/fotmatPrice";
 import CartItem from "./components/cart-item";
 import { useEffect, useState } from "react";
-import { useMercadoPago } from "@/api/useMercadoPago";
+import { useMercadoPago } from "@/hooks/useMercadoPago";
 
 
 export default function Page() {
@@ -15,7 +15,7 @@ export default function Page() {
     const prices = items.map(item => item.price);
     const totalPrice = prices.reduce((total, price) => total + price, 0);
 
-    const [preference, setPreference] = useState<any>([]);
+    const [preference, setPreference] = useState<Object>([]);
 
     useEffect(() => {
         setPreference( items.map(item => (
