@@ -9,7 +9,7 @@ const client = new MercadoPagoConfig({
     accessToken: process.env.ACCES_TOKEN_MERCADOPAGO!
 });
 
-export async function useMercadoPagoHook (props : PreferenceMP[])  {
+export async function mercadoPagoHook (props : PreferenceMP[])  {
 
     const preference = await new Preference(client).create({
         body:{
