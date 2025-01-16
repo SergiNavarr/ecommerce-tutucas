@@ -18,19 +18,22 @@ const LovedItemProduct = (props: LovedItemProductProps) => {
 
     const isInCart = cart.items.find((item) => item.id === product.id);
 
+    console.log(product);
+
     return (
         <li className="flex py-6 border-b">
-            <div onClick={() => router.push(`/product/${product.slug}`)} className="cursor-pointer">
+            
+            <div onClick={() => router.push(`/product/${product.attributes.slug}`)} className="cursor-pointer">
                 <img
-                    src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${product.images[0].url}`}
-                    alt={product.productName}
+                    src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${product.attributes.images.data[0].attributes.url}`}
+                    alt={product.attributes.productName}
                     className="w-24 h-24 overflow-hidden rounded-md sm:w-auto sm:h-32"
                 />
-            </div>
+            </div> 
             <div className="flex justify-between flex-1 px-6">
                 <div>
-                    <h2 className="text-lg font-bold">{product.productName}</h2>
-                    <p>${formatPrice(product.price)}</p>
+                    <h2 className="text-lg font-bold">{product.attributes.productName}</h2>
+                    <p>${formatPrice(product.attributes.price)}</p>
                     <div className="flex justify-between gap-3">
                         <p className="px-2 py-1 text-xs text-white"></p>
                         {

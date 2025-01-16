@@ -1,16 +1,19 @@
 import { Carousel,  CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 interface CarouselProductProps {
-    images:[{
+    data:[{
         "id": number,
+        "attributes": {
         "url": string,
+        }
+        
     }];
 }
 
 const CarouselProduct = (props : CarouselProductProps) => {
-    const {images} = props;
+    const {data} = props;
 
-    if(!Array.isArray(images) || images.length < 1){
+    if(!Array.isArray(data) || data.length < 1){
         return <div>No hay imágenes</div>
     } 
 
@@ -18,9 +21,9 @@ const CarouselProduct = (props : CarouselProductProps) => {
         <div className="sm:px-16">
             <Carousel>
                 <CarouselContent>
-                    {images.map((image) => (
+                    {data.map((image) => (
                         <CarouselItem key={image.id}>
-                            <img src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${image.url}`} alt="Image Product" className="rounded-lg" />
+                            <img src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${image.attributes.url}`} alt="Image Product" className="rounded-lg" />
                         </CarouselItem>
                     ))}
                 </CarouselContent>

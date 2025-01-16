@@ -38,12 +38,12 @@ const InfoProduct = (props : InfoProductProps) => {
     return ( 
         <div className="px-6 mt-3 sm:mt-0">
             <div className="justify-between mb-3 sm:flex">
-                <h1 className="text-2xl font-bold">{product.productName}</h1>
+                <h1 className="text-2xl font-bold">{product.attributes.productName}</h1>
             </div>
             <Separator className="my-4"/>
-            <p className="text-sm">{product.description}</p>
+            <p className="text-sm">{product.attributes.description}</p>
             <Separator className="my-4"/>
-            <p className="my-4 text-2xl ">${formatPrice(product.price)}</p>
+            <p className="my-4 text-2xl ">${formatPrice(product.attributes.price)}</p>
             <div className="flex items-center gap-5">
 
                 {

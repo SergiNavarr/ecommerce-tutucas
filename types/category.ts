@@ -1,9 +1,18 @@
+type images ={
+        id: number;
+        attributes: {
+            url: string;
+        }  
+}
+
 export type CategoryType = {
     id: number;
-    categoryName: string;
-    slug: string;
-    documentId: string;
-    mainImage:[{
-        url: string;
-    }];
+    attributes: {
+        categoryName: string;
+        slug: string;
+        documentId: string;
+        mainImage:{
+            data: images
+        }
+    };
 }

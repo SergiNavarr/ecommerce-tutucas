@@ -1,17 +1,26 @@
-type images = {
-    url: string,
-    id: number
-}
+export type ImagesProductType = {
+    id: number;
+    attributes:{
+        url: string;
+    }
+};
 
 export type ProductType = {
-    active: boolean;
-    description: string;
-    documentId: string;
-    gender: string;
     id: number;
-    productName: string;
-    images: [images];
-    isFeatured: boolean;
-    price: number;
-    slug: string;
-}
+    attributes: {
+        active: boolean;
+        description: string;
+        documentId: string;
+        gender: string;
+        productName: string;
+        images: {
+            data: [ImagesProductType];
+        };
+        isFeatured: boolean;
+        price: number;
+        slug: string;
+        category: {
+            data: any;
+        };
+    };
+};

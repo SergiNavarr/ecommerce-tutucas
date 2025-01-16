@@ -21,11 +21,13 @@ export default function Page() {
 
     const producto : ProductType = Array.isArray(result) ? result[0] : result;
 
+    console.log(producto.attributes.images)
+
     return (
         <div className="max-w-6xl py-4 mx-auto sm:py-32 sm:px-24">
             <div className="grid sm:grid-cols-2">
                 <div>
-                    <CarouselProduct images={producto.images}/>
+                    <CarouselProduct data={producto.attributes.images.data}/> 
                 </div>
                 <div>
                     <InfoProduct product={producto}/>

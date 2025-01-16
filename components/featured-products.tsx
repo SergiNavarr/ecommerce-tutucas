@@ -29,7 +29,7 @@ const FeaturedProducts = () => {
                     )}
                     {result != null && (
                         result.map((product : ProductType) => {
-                            const { id, images, slug, productName, price} = product;
+                            const { id, attributes} = product;
 
                             return (
                                 <CarouselItem key={id} className="md:basis-1/2 lg:basis-1/3 group">
@@ -37,14 +37,14 @@ const FeaturedProducts = () => {
                                         <Card className="py-4 border borger-gray-200 shadow-none">
                                             <CardContent className="relative flex items-center justify-center px-6 py-2">
                                                 <img 
-                                                src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${images[0].url}`}
+                                                src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${attributes.images.data[0].attributes.url}`}
                                                 alt="Image Featured" 
                                                 className="w-full md:h-[350px]"
                                                 />
                                                 <div className="absolute w-full px-6 transition duration-200 opacity-0 group-hover:opacity-100 bottom-5">
                                                     <div className="flex justify-center gap-x-6">
                                                         <IconButton 
-                                                            onClick={() => router.push(`/product/${slug}`)} 
+                                                            onClick={() => router.push(`/product/${attributes.slug}`)} 
                                                             icon={<Expand size={30}  
                                                             className="text-gray-600"/>} 
                                                         />
@@ -57,9 +57,9 @@ const FeaturedProducts = () => {
                                                 </div>
                                             </CardContent>
                                             <div className="flex justify-between gap-4 px-8">
-                                                <h3>{productName}</h3>
+                                                <h3>{attributes.productName}</h3>
                                                 <div className="flex items-center justify-between gap-3">
-                                                    <p className="px-2 py-1 text-white bg-black rounded-full dark:bg-white dark:text-black w-fit">${formatPrice(price)}</p>
+                                                    <p className="px-2 py-1 text-white bg-black rounded-full dark:bg-white dark:text-black w-fit">${formatPrice(attributes.price)}</p>
                                                 </div>
                                             </div>
 

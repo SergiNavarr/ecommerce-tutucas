@@ -21,7 +21,7 @@ export default function Page() {
     const [filterGender, setFilterGender] = useState('');
 
     const filteredProducts = result !== null && !loading && (
-        filterGender == '' ? result : result.filter((product: ProductType) => product.gender === filterGender)
+        filterGender == '' ? result : result.filter((product: ProductType) => product.attributes.gender === filterGender)
     )
 
     return (

@@ -13,7 +13,7 @@ export default function Page() {
 
     const { items } = useCart();
 
-    const prices = items.map(item => item.price);
+    const prices = items.map(item => item.attributes.price);
     const totalPrice = prices.reduce((total, price) => total + price, 0);
 
     const [preference, setPreference] = useState<PreferenceMP[]>([]);
@@ -22,9 +22,9 @@ export default function Page() {
         setPreference( items.map(item => (
             {
                 id : item.id.toString(),
-                title : item.productName,
+                title : item.attributes.productName,
                 quantity : 1,
-                unit_price : item.price,
+                unit_price : item.attributes.price,
             
             })
         ))
