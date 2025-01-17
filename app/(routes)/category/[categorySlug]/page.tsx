@@ -23,11 +23,12 @@ export default function Page() {
     const filteredProducts = result !== null && !loading && (
         filterGender == '' ? result : result.filter((product: ProductType) => product.attributes.gender === filterGender)
     )
+    console.log(result);
 
     return (
         <div className="max-w-6xl py-4 mx-auto sm:py-16 sm:px-24">
             {Array.isArray(result) && result.length > 0 && !loading && (
-                <h1 className="text-3xl font-medium"> {result[0].category.categoryName}</h1>
+                <h1 className="text-3xl font-medium"> {result[0].attributes.category.data.attributes.categoryName}</h1>
             )}
             <Separator />
 
