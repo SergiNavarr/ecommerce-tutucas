@@ -25,7 +25,7 @@ const LovedItemProduct = (props: LovedItemProductProps) => {
             
             <div onClick={() => router.push(`/product/${product.attributes.slug}`)} className="cursor-pointer">
                 <img
-                    src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${product.attributes.images.data[0].attributes.url}`}
+                    src={`${product.attributes.images.data[0].attributes.url}`}
                     alt={product.attributes.productName}
                     className="w-24 h-24 overflow-hidden rounded-md sm:w-auto sm:h-32"
                 />

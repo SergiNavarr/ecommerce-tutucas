@@ -18,7 +18,7 @@ const ChooseCategory = () => {
                         href={`/category/${category.attributes.slug}`} 
                         className="relative max-w-xs mx-auto overflow-hidden bg-no-repeat bg-cover rounded-lg">
                             <img 
-                            src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${category.attributes.mainImage.data.attributes.url}`} 
+                            src={`${category.attributes.mainImage.data.attributes.url}`} 
                             alt={category.attributes.categoryName} 
                             className="max-w-[270px] max-h-[250px] transition duration-300 ease-in-out rounded-lg hover:scale-110" />
                             <p className="absolute w-full py-2 text-lg font-bold text-center text-white bottom-5 backdrop-blur-lg">{category.attributes.categoryName}</p>
